@@ -1,0 +1,175 @@
+# PartyAdder 설정
+# 서버 구조:
+# - 파티 정보 / 멤버 정보는 DB에 저장됩니다.
+# - GUI 이름 / 메시지 / 로어는 이 파일에서 수정할 수 있습니다.
+# - <config>는 아래 값으로 대체된다고 생각하면 됩니다.
+
+settings:
+  # DB 타입: sqlite 또는 mysql
+  database-type: sqlite
+
+  sqlite:
+    # plugins/PartyAdder/party.db 로 저장됩니다.
+    file: party.db
+
+  mysql:
+    host: localhost
+    port: 3306
+    database: partyadder
+    user: root
+    password: password
+    use-ssl: false
+
+  # 파티 최대 인원
+  max-members: 8
+
+  # 파티 이름 변경 허용 여부
+  allow-rename: true
+
+  # 파티 TP / TPALL 허용 여부
+  allow-teleport: true
+
+  # TP / TPALL 쿨타임(초)
+  teleport-cooldown-seconds: 60
+
+  # 파티 경험치 공유 허용 여부
+  enable-xp-share: true
+
+  # 공유 비율(%)
+  xp-share-percent: 20.0
+
+  # 파티원이 오프라인이 되면 자동 추방 여부
+  kick-offline-members: true
+
+  # 오프라인 후 자동 추방까지 걸리는 시간(초)
+  offline-kick-seconds: 300
+
+  # 파티장이 오프라인 추방 대상이면 파티 전체 삭제 여부
+  delete-party-when-leader-offline: true
+
+  # 초대/가입신청/삭제 확인 시간(초)
+  confirm-seconds: 3
+
+  # 초대/신청/삭제/자동추방 알림에서 클릭 메시지 표시 여부
+  clickable-text: true
+
+sound:
+  error-sound: BLOCK_ANVIL_LAND
+  sucess-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+
+messages:
+  prefix: ""
+  no-permission: "ሱ㌴㌴㌴&c권한이 없습니다."
+  only-player: "ሱ㌴㌴㌴&c플레이어만 사용할 수 있습니다."
+  party-exists: "ሱ㌴㌴㌴&c이미 같은 이름의 파티가 있습니다."
+  already-in-party: "ሱ㌴㌴㌴&c이미 파티에 소속되어 있습니다."
+  party-created: "&a파티 '&f%party%&a' 가 생성되었습니다."
+  party-not-found: "ሱ㌴㌴㌴&c해당 파티를 찾을 수 없습니다."
+  not-in-party: "ሱ㌴㌴㌴&c소속된 파티가 없습니다."
+  not-leader: "ሱ㌴㌴㌴&c파티장만 사용할 수 있습니다."
+  target-not-found: "ሱ㌴㌴㌴&c대상을 찾을 수 없습니다."
+  target-not-in-party: "&c대상이 파티에 소속되어 있지 않습니다."
+  target-already-in-party: "ሱ㌴㌴㌴&c대상은 이미 파티에 소속되어 있습니다."
+  party-full: "ሱ㌴㌴㌴&c파티 인원이 가득 찼습니다."
+  invite-sent: "&a%target% 님에게 초대를 보냈습니다."
+  invited-you: "&e%party%&f 파티에 초대되었습니다."
+  invite-expired: "ሱ㌴㌴㌴&c파티 초대가 만료되었습니다."
+  invite-accepted: "&a초대를 수락하여 파티에 가입했습니다."
+  invite-rejected: "&e초대를 거절했습니다."
+  join-request-sent: "&a%party% 파티에 가입신청을 보냈습니다."
+  join-request-received: "&e%player% 님이 파티 가입을 신청했습니다."
+  join-request-accepted: "&a가입신청이 수락되었습니다."
+  join-request-rejected: "ሱ㌴㌴㌴&c가입신청이 거절되었습니다."
+  member-kicked: "&c%player% 님을 추방했습니다."
+  kicked-from-party: "ሱ㌴㌴㌴&c파티에서 추방되었습니다."
+  leadership-transferred: "&a파티장이 %player% 님으로 변경되었습니다."
+  party-renamed: "&a파티 이름이 &f%party%&a 로 변경되었습니다."
+  party-deleted: "ሱ㌴㌴㌴&c파티가 삭제되었습니다."
+  confirm-delete: "&e같은 명령어를 %seconds%초 안에 다시 입력하면 삭제됩니다."
+  confirm-delete-expired: "ሱ㌴㌴㌴&c삭제 확인 시간이 만료되었습니다."
+  party-pvp-on: "&a파티 PVP가 켜졌습니다."
+  party-pvp-off: "&c파티 PVP가 꺼졌습니다."
+  party-public-on: "&a파티 공개로 변경되었습니다."
+  party-public-off: "&c파티 비공개로 변경되었습니다."
+  party-chat-on: "&a파티 채팅이 켜졌습니다."
+  party-chat-off: "&c파티 채팅이 꺼졌습니다."
+  tp-used: "&a파티원을 현재 위치로 이동시켰습니다."
+  tp-cooldown: "ሱ㌴㌴㌴&c아직 쿨타임이 남았습니다. 남은 시간: %time%초"
+  reload-complete: "&aconfig를 리로드했습니다."
+  xp-shared: "&a파티 경험치 %xp%를 공유했습니다."
+  offline-kick: "ሱ㌴㌴㌴&c%player% 님은 오프라인이 되어 파티에서 제거되었습니다."
+  offline-leader-delete: "ሱ㌴㌴㌴&c파티장이 오프라인이 되어 파티가 삭제되었습니다."
+  random-match-none: "ሱ㌴㌴㌴&c매칭할 공개 파티가 없습니다."
+  random-match-selected: "&a%party% 파티에 매칭되었습니다."
+  chat-format: "&7[파티]&f %player%: %message%"
+
+gui:
+  main-title: ":offset_-8::party-menu:"
+  public-title: "&0공개 파티 목록"
+  members-title: "&0파티 멤버 목록"
+  member-actions-title: "&0멤버 관리"
+  invite-list-title: "&0초대할 플레이어"
+  request-list-title: "&0가입신청 목록"
+  party-settings: ":offset_-8::party-setting-menu:"
+  rows:
+    main: 6
+    public: 6
+    members: 6
+    actions: 3
+    invite: 6
+    request: 6
+
+  items:
+    glass:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    party-info:
+      material: NETHER_STAR
+      name: "&e파티 정보"
+    members:
+      material: PLAYER_HEAD
+      name: "&b멤버 목록"
+    public-list:
+      material: PAPER
+      name: "<italic:false><#FFA7A7>[ <#FFFFFF>파티 <#FFD8D8>목록 <#FFA7A7>]"
+      custom_model_data: 1
+    invite:
+      material: EMERALD
+      name: "&a플레이어 초대"
+    request:
+      material: PAPER
+      name: "&e가입신청 목록"
+    toggle-public:
+      material: LIME_DYE
+      name: "&a공개/비공개"
+    toggle-pvp:
+      material: DIAMOND_SWORD
+      name: "&cPVP 토글"
+    toggle-chat:
+      material: OAK_SIGN
+      name: "&6파티 채팅"
+    rename:
+      material: ANVIL
+      name: "&b파티 이름변경"
+    teleport:
+      material: ENDER_PEARL
+      name: "&d파티원 소환"
+    teleport-all:
+      material: ENDER_EYE
+      name: "&5전체 소환"
+    delete:
+      material: BARRIER
+      name: "&c파티 삭제"
+    random-match:
+      material: PAPER
+      name: "<italic:false><#BDBDBD>[ <#FFFFFF>파티 <#EAEAEA>랜덤매칭 <#BDBDBD>]"
+      custom_model_data: 1
+    back:
+      material: ARROW
+      name: "&7뒤로"
+    accept:
+      material: LIME_DYE
+      name: "&a수락"
+    deny:
+      material: RED_DYE
+      name: "&c거절"

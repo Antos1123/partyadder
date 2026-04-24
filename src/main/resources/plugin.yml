@@ -1,0 +1,16 @@
+name: PartyAdder
+version: 1.0.0
+main: kr.antos112.partyadder.PartyAdder
+api-version: "1.21"
+author: antos112
+description: Party system for Paper 1.21.4
+
+commands:
+  파티:
+    description: 파티 시스템
+    usage: /파티
+    aliases: [party]
+
+permissions:
+  partyadder.reload:
+    default: op
